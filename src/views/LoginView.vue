@@ -29,7 +29,7 @@
 
 <script setup>
 // Vue
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 // Firebase
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import Firebase from "../firebase_settings/index.js"
@@ -63,7 +63,7 @@ function signUp() {
             useChangeRoute(route, router, '/')
         })
         .catch(error => {
-            console.log(error.code)
+            console.error(error.code)
             judgeErrorCode(error.code)
         })
 }
@@ -80,7 +80,7 @@ function logIn() {
             useChangeRoute(route, router, '/')
         })
         .catch(error => {
-            console.log(error.code)
+            console.error(error.code)
             judgeErrorCode(error.code)
         })
 }
@@ -122,16 +122,11 @@ function judgeErrorCode(errorCode) {
             break;
     }
 }
-onMounted(() => {
-    console.log("ninomiya.takuya.860514@gmail.com")
-    console.log("nino860514")
-}
-)
 </script>
 
 <style scoped>
 main {
-    height: 100vh;
+    height: 100svh;
     background: url(/src/assets/image.jpg) center / cover;
     display: flex;
     flex-direction: column;

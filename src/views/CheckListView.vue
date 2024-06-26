@@ -15,7 +15,7 @@
         </div>
         <ul class="list">
             <template v-if="filteredCheckLists.length === 0">
-                <li class="blank">リストが登録されていません。</li>
+                <li class="blank">リストがありません。</li>
             </template>
             <template v-else>
                 <ListItemTransitionComponent>
@@ -137,7 +137,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
-    min-height: calc(100vh - 9.2rem);
+    min-height: calc(100svh - 9.2rem);
 }
 
 .tabs {

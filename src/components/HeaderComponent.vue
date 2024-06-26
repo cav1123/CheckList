@@ -122,6 +122,7 @@ h1 {
         flex-direction: column;
         gap: 1.2rem;
         margin-bottom: 2.4rem;
+        width: 100%;
     }
 
     .buttons{

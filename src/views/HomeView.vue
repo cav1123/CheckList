@@ -3,7 +3,7 @@
   <main>
     <ul class="list">
       <template v-if="categories.length === 0">
-        <li class="blank">リストが登録されていません。</li>
+        <li class="blank">リストがありません。</li>
       </template>
       <template v-else>
         <ListItemTransitionComponent>
@@ -133,13 +133,11 @@ function add() {
 }
 // マウント
 onMounted(async () => {
-  console.log("start");
   await setUser()
   getCategoryId(user.value.uid)
   getCategories(user.value.uid)
   getCheckListId(user.value.uid)
   getCheckLists(user.value.uid)
-  console.log("end");
 })
 </script>
 
@@ -148,7 +146,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  min-height: calc(100vh - 9.2rem);
+  min-height: calc(100svh - 9.2rem);
 }
 
 .blank {
@@ -190,6 +188,7 @@ textarea {
     flex-direction: column;
     gap: 2.4rem;
     margin: 2.4rem 0;
+    width: 100%;
   }
 
   .instruction {
@@ -205,6 +204,7 @@ textarea {
 
     & .text {
       line-height: 1.43;
+      word-break: break-all;
     }
   }
 
